@@ -31,3 +31,5 @@ df["sex"].hist()
 # Unique values
 df["sex"].unique()
 
+# Filtering
+df["name"].head()
