@@ -24,3 +24,6 @@ plt.xticks((range(len(continous_features))), continous_features, rotation="45")
 plt.yticks((range(len(continous_features))), continous_features, rotation="45")
 plt.colorbar()
 plt.show()
+
+# Histograms
+df["age"].hist()
