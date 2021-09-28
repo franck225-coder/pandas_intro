@@ -52,3 +52,34 @@ df.iloc[0, :]
 #We can use iloc to get rows or columns at particular positions in the dataframe
 # Selecting a specific value
 df.iloc[0, 1]
+
+######Preprocessing#####
+
+# Rows with at least one NaN value
+df[pd.isnull(df).any(axis=1)].head()
+# Drop rows with Nan values
+df = df.dropna()
+df = df.reset_index()
+df.head()
+# Dropping multiple columns
+df = df.drop(["name","cabin","ticket"], axis=1)
+df.head()
+# Map feature values
+df["sex"] = df["sex"].map({"female":0, "male":1}).astype(int)
+df["embarked"] = df["embarked"].dropna().map({"S":0, "C":1, "Q":2}).astype(int)
+df.head()
+# Feature engineering
+def get_family_size(sibsp, parch):
+    family_size = sibsp + parch
+    return family_size
+
+"""
+Once we define the function, we can use lambda
+to apply that function on each row
+(using the numbers of siblings and parents in each row to
+determine the family size for each row).
+"""
+df["family_size"] = df[["sibsp", "parch"]].apply(lambda x: get_family_size(x["sibsp"], x["parch"]), axis=1)
+df.head()
+
+# Reorganize headers
