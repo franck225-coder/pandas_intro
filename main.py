@@ -32,4 +32,15 @@ df["sex"].hist()
 df["sex"].unique()
 
 # Filtering
-df["name"].head()
+
+# Selecting data by feature
+df["ticket"].head()
+
+# Filtering
+df[df["sex"]=="female"].head()
+
+# sorting
+df.sort_values("age", ascending=False).head()
+
+
+
