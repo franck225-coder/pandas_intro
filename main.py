@@ -46,3 +46,9 @@ df.sort_values("age", ascending=False).head()
 survived_group = df.groupby("survived")
 survived_group.mean()
 
+# indexing
+# Selecting row 0
+df.iloc[0, :]
+#We can use iloc to get rows or columns at particular positions in the dataframe
+# Selecting a specific value
+df.iloc[0, 1]
