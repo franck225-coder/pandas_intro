@@ -83,3 +83,8 @@ df["family_size"] = df[["sibsp", "parch"]].apply(lambda x: get_family_size(x["si
 df.head()
 
 # Reorganize headers
+df = df[["pclass", "sex", "age", "sibsp", "parch", "family_size", "fare", "embarked", "survived"]]
+df.head()
+
+# save_data
+df.to_csv("processed_titanic.csv", index= True)
