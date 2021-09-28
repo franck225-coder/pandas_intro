@@ -48,12 +48,12 @@ survived_group.mean()
 
 # indexing
 # Selecting row 0
-df.iloc[0, :]
+df.iloc[:, 1].head()
 #We can use iloc to get rows or columns at particular positions in the dataframe
 # Selecting a specific value
 df.iloc[0, 1]
 
-######Preprocessing#####
+######Preprocessing######
 
 # Rows with at least one NaN value
 df[pd.isnull(df).any(axis=1)].head()
