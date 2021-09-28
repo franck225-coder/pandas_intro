@@ -26,4 +26,8 @@ plt.colorbar()
 plt.show()
 
 # Histograms
-df["age"].hist()
+df["sex"].hist()
+
+# Unique values
+df["sex"].unique()
+
