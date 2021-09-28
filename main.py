@@ -42,5 +42,7 @@ df[df["sex"]=="female"].head()
 # sorting
 df.sort_values("age", ascending=False).head()
 
-
+# grouping
+survived_group = df.groupby("survived")
+survived_group.mean()
 
