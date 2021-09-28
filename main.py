@@ -18,3 +18,9 @@ import matplotlib.pyplot as plt
 df.describe()
 
 # Correlation matrix
+plt.matshow(df.corr())
+continous_features =df.describe().columns
+plt.xticks((range(len(continous_features))), continous_features, rotation="45")
+plt.yticks((range(len(continous_features))), continous_features, rotation="45")
+plt.colorbar()
+plt.show()
